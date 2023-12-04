@@ -6,6 +6,7 @@ Thumbs.db
 *.apk
 *.ap_
 *.aab
+test.log
 
 proguardMapping.txt
 
