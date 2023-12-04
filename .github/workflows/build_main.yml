@@ -18,9 +18,9 @@ jobs:
 
       - name: Check New Commit
         run: |
-          upstreamCode=https://github.com/intHbl/homeVideoBox
+          upstreamCode=https://github.com/intHbl/live_box
           echo "upstreamCode=$upstreamCode" >> $GITHUB_ENV
-          commit=$(curl -sL $upstreamCode/commits/main | grep -o '/intHbl/homeVideoBox/commit/[a-z0-9]\+' |head -1 | cut -d\/ -f5)
+          commit=$(curl -sL $upstreamCode/commits/main | grep -o '/intHbl/live_box/commit/[a-z0-9]\+' |head -1 | cut -d\/ -f5)
           if ! git log --oneline |grep -q "$commit"; then
             echo "commit=$commit" >> $GITHUB_ENV
             echo "commitS=${commit:0:7}" >> $GITHUB_ENV
@@ -65,7 +65,7 @@ jobs:
         run: |
           mkdir -p apk_out___
           for file in `find ~ -name "*release*.apk" -print`; do
-            cp "$file" apk_out___/LiveBox_${{ env.tag }}_Release.apk
+            cp "$file" apk_out___/liveBox_${{ env.tag }}_Release.apk
           done
 
 
@@ -73,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@v3
         if: ${{ env.commit }}
         with:
-          name: homeVideoBox-Release-${{ env.commit }}
+          name: liveBox-${{ env.commit }}
           path: apk_out___/*
 
 ##########
@@ -91,7 +91,7 @@ jobs:
         working-directory: liveBox
         run: |
           for file in `find ~ -name "*debug*.apk" -print`; do
-            cp "$file" apk_out___/LiveBox_${{ env.tag }}_Debug.apk
+            cp "$file" apk_out___/liveBox_${{ env.tag }}_Debug.apk
           done
 
       - name: "[OK] Upload App_Debug To Artifact"
