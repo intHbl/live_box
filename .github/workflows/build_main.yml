@@ -79,7 +79,7 @@ jobs:
 ##########
 
       - name: "[debug] Build Debug With Gradle"
-        f: ${{ env.commit }}
+        if: ${{ env.commit }}
         working-directory: liveBox
         run: |
           chmod +x gradlew
