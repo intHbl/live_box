@@ -239,6 +239,7 @@ public class LivePlayActivity extends BaseActivity {
                     iv_playpause.setBackground(ContextCompat.getDrawable(LivePlayActivity.context, R.drawable.vod_pause));
                 }
             }
+
         });
 
 
@@ -336,6 +337,7 @@ public class LivePlayActivity extends BaseActivity {
             // 时移SHIYI 
             return;
         }
+
 
         tip_chname.setText(channel_Name.getChannelName());
         tv_channelnum.setText("" + channel_Name.getChannelNum());
@@ -679,7 +681,7 @@ public class LivePlayActivity extends BaseActivity {
                 mHandler.postDelayed(this,1000);
             }else{
                 ll_right_top_loading.setVisibility(View.VISIBLE);
-                mHandler.postDelayed(this,4000);
+                mHandler.postDelayed(this,11*1000);
             }
             isTopShow=!isTopShow;
         }
@@ -734,6 +736,13 @@ public class LivePlayActivity extends BaseActivity {
 
                         currentLiveChangeSourceTimes = 0;
                         mHandler.removeCallbacks(mConnectTimeoutChangeSourceRun);
+//                        int w=mVideoView.getVideoSize()[0];
+//                        int h=mVideoView.getVideoSize()[1];
+////                        tvTime.setText(""+w+"x"+h);
+//                        if(w>2000 || h>1100){
+//                            sourceTimeout=8000;
+//                            playNextSource();
+//                        }
                         break;
                     case VideoView.STATE_ERROR:
                     case VideoView.STATE_PLAYBACK_COMPLETED:
