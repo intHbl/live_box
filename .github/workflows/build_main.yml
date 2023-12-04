@@ -26,7 +26,7 @@ jobs:
             echo "commitS=${commit:0:7}" >> $GITHUB_ENV
           fi
 
-      - name: [checkout] Checkout Source Code and Zip
+      - name: checkout Checkout Source Code and Zip
         if: ${{ env.commit }}
         run: |
           git clone ${{ env.upstreamCode }} liveBox
