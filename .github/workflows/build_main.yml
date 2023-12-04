@@ -65,7 +65,7 @@ jobs:
         run: |
           mkdir -p apk_out___
           for file in `find ~ -name "*release*.apk" -print`; do
-            cp "$file" /apk_out___/LiveBox_${{ env.tag }}_Release.apk
+            cp "$file" apk_out___/LiveBox_${{ env.tag }}_Release.apk
           done
 
 
@@ -74,7 +74,7 @@ jobs:
         if: ${{ env.commit }}
         with:
           name: homeVideoBox-Release-${{ env.commit }}
-          path: /apk_out___/*
+          path: apk_out___/*
 
 ##########
 
@@ -91,7 +91,7 @@ jobs:
         working-directory: liveBox
         run: |
           for file in `find ~ -name "*debug*.apk" -print`; do
-            cp "$file" /apk_out___/LiveBox_${{ env.tag }}_Debug.apk
+            cp "$file" apk_out___/LiveBox_${{ env.tag }}_Debug.apk
           done
 
       - name: "[OK] Upload App_Debug To Artifact"
@@ -99,5 +99,5 @@ jobs:
         if: ${{ env.commit }}
         with:
           name: liveBox-Debug-${{ env.commit }}
-          path: /apk_out___/*
+          path: apk_out___/*
 
