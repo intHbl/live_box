@@ -74,7 +74,7 @@ jobs:
         if: ${{ env.commit }}
         with:
           name: liveBox-${{ env.commit }}
-          path: apk_out___/*
+          path: liveBox/apk_out___/*
 
 ##########
 
