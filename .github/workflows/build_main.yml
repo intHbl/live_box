@@ -26,7 +26,7 @@ jobs:
             echo "commitS=${commit:0:7}" >> $GITHUB_ENV
           fi
 
-      - name: checkout Checkout Source Code and Zip
+      - name: "[checkout] checkout Checkout Source Code and Zip"
         if: ${{ env.commit }}
         run: |
           git clone ${{ env.upstreamCode }} liveBox
@@ -51,7 +51,7 @@ jobs:
           sed -i '$a\RELEASE_KEY_PASSWORD=TVBoxOSC'         ./gradle.properties
 
 ###
-      - name: [release] Build Release With Gradle
+      - name: "[release] Build Release With Gradle"
         if: ${{ env.commit }}
         working-directory: liveBox
         run: |
@@ -69,7 +69,7 @@ jobs:
           done
 
 
-      - name: [OK] Upload App_Release To Artifact
+      - name: "[OK] Upload App_Release To Artifact"
         uses: actions/upload-artifact@v3
         if: ${{ env.commit }}
         with:
@@ -78,7 +78,7 @@ jobs:
 
 ##########
 
-      - name: [debug] Build Debug With Gradle
+      - name: "[debug] Build Debug With Gradle"
         f: ${{ env.commit }}
         working-directory: liveBox
         run: |
@@ -86,7 +86,7 @@ jobs:
           ./gradlew assembledebug --build-cache --parallel --daemon --warning-mode all
 
 
-      - name: Prepare App_Debug
+      - name: "Prepare App_Debug"
         if: ${{ env.commit }}
         working-directory: liveBox
         run: |
@@ -95,7 +95,7 @@ jobs:
             cp "$file" /apk__/LiveBox_${{ env.tag }}_Debug.apk
           done
 
-      - name: [OK] Upload App_Debug To Artifact
+      - name: "[OK] Upload App_Debug To Artifact"
         uses: actions/upload-artifact@v3
         if: ${{ env.commit }}
         with:
