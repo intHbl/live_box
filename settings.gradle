@@ -1,0 +1,4 @@
+rootProject.name = "TVBoxLiveOnly"
+include ':app'
+include ':player'
+//include ':quickjs'

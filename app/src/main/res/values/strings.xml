@@ -1,0 +1,6 @@
+<resources>
+    <!--  app名称   -->
+    <string name="app_name">电视Live</string>
+	<string name="mn_Version">2023.1204.0001</string>
+	<string name="dia_about">电视Live</string>
+</resources>
