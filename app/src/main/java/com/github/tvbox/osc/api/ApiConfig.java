@@ -102,20 +102,21 @@ public class ApiConfig {
 
     public void loadConfig(boolean useCache, LoadConfigCallback callback, Activity activity) {
         // api here
-        String apiUrl0 = "http://server.lan:9966/tvbox/lives.json";
-        String apiUrl1 ="https://server.lan/data/tmp/txt/lives.json";
+        String apiUrl0 = "http://server.lan:9966/tvbox/home.lives_only.json";
+//        String apiUrl1 = "https://server.lan/data/tmp/txt/lives.json";
         List<String> apiUrls = new ArrayList<String>();
         apiUrls.add(apiUrl0);
-        apiUrls.add(apiUrl1);
-        apiUrls.add("http://tv.server.lan:9966/tvbox/lives.json");
-        apiUrls.add("http://homevideoserver.lan:9966/tvbox/lives.json");
-        apiUrls.add("http://home-video-server.lan:9966/tvbox/lives.json");
-        apiUrls.add("http://homelab.lan:9966/tvbox/lives.json");
+        apiUrls.add(apiUrl0);
+//        apiUrls.add(apiUrl1);
+        apiUrls.add("http://tv.server.lan:9966/tvbox/home.lives_only.json");
+        apiUrls.add("http://homevideoserver.lan:9966/tvbox/home.lives_only.json");
+        apiUrls.add("http://home-video-server.lan:9966/tvbox/home.lives_only.json");
+        apiUrls.add("http://homelab.lan:9966/tvbox/home.lives_only.json");
 
-        apiUrls.add("http://tv.server.lan/tvbox/lives.json");
-        apiUrls.add("http://homevideoserver.lan/tvbox/lives.json");
-        apiUrls.add("http://home-video-server.lan/tvbox/lives.json");
-        apiUrls.add("http://homelab.lan/tvbox/lives.json");
+        apiUrls.add("http://tv.server.lan/tvbox/home.lives_only.json");
+        apiUrls.add("http://homevideoserver.lan/tvbox/home.lives_only.json");
+        apiUrls.add("http://home-video-server.lan/tvbox/home.lives_only.json");
+        apiUrls.add("http://homelab.lan/tvbox/home.lives_only.json");
 
         apiUrls.add(apiUrl0);
 
