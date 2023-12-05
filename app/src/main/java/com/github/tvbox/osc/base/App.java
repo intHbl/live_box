@@ -65,8 +65,8 @@ public class App extends MultiDexApplication {
     private void initParams() {
         // Hawk
         Hawk.init(this).build();
-//        Hawk.put(HawkConfig.DEBUG_OPEN, false);
-        Hawk.put(HawkConfig.DEBUG_OPEN, true);
+        Hawk.put(HawkConfig.DEBUG_OPEN, false);
+        // Hawk.put(HawkConfig.DEBUG_OPEN, true);
         // if (!Hawk.contains(HawkConfig.PLAY_TYPE)) {
         Hawk.put(HawkConfig.PLAY_TYPE, 1);
 //        Hawk.put(HawkConfig.HOME_REC, 2);      				// Home Rec 0=豆瓣, 1=站点推荐, 2=历史
